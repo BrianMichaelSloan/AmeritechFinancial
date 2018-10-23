@@ -78,7 +78,7 @@ class Loan:
         return str
         
     def csToString(self):
-        str = "ID#:  {0}\nBalance:  ${1}\nStatus:  {2}".format(self.id, self.bal, self.status)
+        str = "Loan Type:  {0}\nBalance:  ${1}\nStatus:  {2}".format(self.type, self.bal, self.status)
 
         if self.status != "Forbearance":
             str += "\nNext Payment Date:  {0}\nNext Payment Amount:  ${1}".format(self.paymentDate, self.paymentAmount)
@@ -91,7 +91,7 @@ class Loan:
         str +="\nForbearance Time Remaining:  {0} Days".format(1095-self.forbTime.days)
         return str
     
-    def verToString(self):
+    def vToString(self):
         if self.parent == True:
             return "ID#:  {0}\nBalance:  ${1}\nStatus:  {2}\nServicer:  {3}\nParent Plus".format(self.id, self.bal, self.status, self.servicer)
         else:
